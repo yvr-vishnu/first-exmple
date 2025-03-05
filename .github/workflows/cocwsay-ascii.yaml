@@ -6,26 +6,28 @@ jobs:
   build_job:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout_repo
-        uses: actions/checkout@v4
-
-      - name: list files
-        run: ls -ltra
-
       - name: Install-dependent-packages
         run: sudo apt-get update && sudo apt install cowsay -y
 
       - name: run the cowsay
         run: cowsay -f dragon "hello RRRR" >> dragon.txt
 
-      - name: Sleep fpr 30 sec
-        run: sleep 30
+      - name: upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dragon.txt file
+          path: dragon.txt
   Test_job:
     needs: build_job
     runs-on : ubuntu-latest
     steps:
-      - name: Sleep fpr 10 sec
-        run: sleep 10
+      - name: Download an artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dragon.txt
+
+      - name: Display structure of downloaded files
+        run: ls -R
 
       - name: Find the dragon file
         run: grep "dragon" dragon.txt
@@ -33,5 +35,9 @@ jobs:
     needs: [build_job, Test_job]
     runs-on : ubuntu-latest
     steps:
+      - name: Download an artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: dragon.txt
       - name: read the file
         run: cat dragon.txt
