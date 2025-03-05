@@ -21,3 +21,9 @@ jobs:
             sudo apt install cowsay -y
         - name: Cowsay-command
           run: cowsay -f dragon "hellow rrrrr" >> dragon.txt
+
+        - name: find the dragon file
+          run: grep -i "dragon.txt"
+
+        - name: read the file
+          run: cat dragon.txt
