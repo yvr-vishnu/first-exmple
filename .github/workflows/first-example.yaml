@@ -17,8 +17,8 @@ jobs:
 
         - name: cowsay command_ASCII
           run: |
-            apt-get update
-            apt-install cowsay -y
+            sudo apt-get update
+            sudo apt-install cowsay -y
             cowsay -f dragon "hellow rrrrr"
 
           
