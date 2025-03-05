@@ -9,14 +9,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install ASCII packages
-        run: sudo apt-get update && sudo apt-get install -y cowsay
-
-      - name: Run cowsay command
-        run: cowsay -f dragon "Hello rrrrr" >> dragon.txt
-
-      - name: Read the file
-        run: cat dragon.txt
-
-      - name: List the files
+      - name: list the files
         run: ls -ltra
+
+      - name: Executing shell script
+        run: ./ascii-script.sh
