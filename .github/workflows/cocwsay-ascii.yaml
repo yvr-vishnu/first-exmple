@@ -28,9 +28,7 @@ jobs:
 
       - name: Display structure of downloaded files
         run: ls -R
-
-      - name: Find the dragon file
-        run: grep "dragon" dragon.txt
+        
   Deploy_job:
     needs: [build_job, Test_job]
     runs-on : ubuntu-latest
