@@ -9,12 +9,6 @@ jobs:
         - name: checkout repo
           uses: actions/checkout@v4
 
-        - name: welcome message
-          run: |
-            echo "my first github actions job"
-            ls -ltra
-            cat readme.md
-
         - name: installing-ASCII-packages
           run: |
             sudo apt-get update
@@ -23,7 +17,10 @@ jobs:
           run: cowsay -f dragon "hellow rrrrr" >> dragon.txt
 
         - name: find the dragon file
-          run: grep -i "dragon.txt"
+          run: grep -i "dragon" dragon.txt
 
         - name: read the file
           run: cat dragon.txt
+
+        - name: list the  files
+          run: ls -ltra
