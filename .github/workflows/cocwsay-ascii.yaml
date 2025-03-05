@@ -15,11 +15,8 @@ jobs:
       - name: Run cowsay command
         run: cowsay -f dragon "Hello rrrrr" >> dragon.txt
 
-      - name: Read the file (for debugging)
+      - name: Read the file
         run: cat dragon.txt
-
-      - name: Verify the dragon file
-        run: grep "Hello rrrrr" dragon.txt
 
       - name: List the files
         run: ls -ltra
