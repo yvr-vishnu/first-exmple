@@ -15,13 +15,13 @@ jobs:
             sudo apt install cowsay -y
 
         - name: Cowsay-command
-          run: cowsay -f dog "hellow rrrrr" >> dog.txt
+          run: cowsay -f dragon "hellow rrrrr" >> dragon.txt
 
         - name: find the dragon file
-          run: grep -i "dog" dog.txt
+          run: grep -i "dragon" dragon.txt
 
         - name: read the file
-          run: cat dog.txt
+          run: cat dragon.txt
 
         - name: list the  files
           run: ls -ltra
