@@ -15,8 +15,9 @@ jobs:
             ls -ltra
             cat readme.md
 
-        - name: cowsay command_ASCII
+        - name: installing-ASCII-packages
           run: |
             sudo apt-get update
             sudo apt install cowsay -y
-            cowsay -f dragon "hellow rrrrr" >> dragon.txt
+        - name: Cowsay-command
+          run: cowsay -f dragon "hellow rrrrr" >> dragon.txt
