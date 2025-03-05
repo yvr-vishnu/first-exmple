@@ -15,11 +15,11 @@ jobs:
       - name: Run cowsay command
         run: cowsay -f dragon "Hello rrrrr" >> dragon.txt
 
-      - name: Verify the dragon file
-        run: grep -i "dragon" dragon.txt
-
-      - name: Read the file
+      - name: Read the file (for debugging)
         run: cat dragon.txt
+
+      - name: Verify the dragon file
+        run: grep "Hello rrrrr" dragon.txt
 
       - name: List the files
         run: ls -ltra
