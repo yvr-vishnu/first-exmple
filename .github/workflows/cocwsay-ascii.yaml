@@ -1,0 +1,22 @@
+name: My cowsay ascii Workflow
+
+on: push
+
+jobs:
+    Ascii_flow:
+        runs-on: ubuntu-latest
+        steps:
+        - name: checkout repo
+          uses: actions/checkout@v4
+
+        - name: welcome message
+          run: |
+            echo "my first github actions job"
+            ls -ltra
+            cat readme.md
+
+        - name: cowsay command_ASCII
+          run: |
+            sudo apt-get update
+            sudo apt install cowsay -y
+            cowsay -f dragon "hellow rrrrr" >> dragon.txt
