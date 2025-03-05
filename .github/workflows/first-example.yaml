@@ -8,11 +8,24 @@ jobs:
         steps:
         - name: checkout repo
           uses: actions/checkout@v4
+
         - name: welcome message
-          run: echo "my first github actions job"
+          run: |
+            echo "my first github actions job"
+            ls-ltra
+            cat readme.md
 
-        - name: List files
-          run: ls
+        - name: cowsay command_ASCII
+          run: |
+            apt-get update
+            apt-install cowsay -y
+            cowsay -f dragon "hellow rrrrr"
 
-        - name: Read file
-          run: cat readme.md
+          
+
+
+        # - name: List files
+        #   run: ls
+
+        # - name: Read file
+        #   run: cat readme.md
